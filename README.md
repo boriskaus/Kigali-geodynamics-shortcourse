@@ -5,7 +5,7 @@ Lecture notes of part of the joint ICTP-EAIFR-IUGG Workshop on Computational Geo
 * July 5, 11:00-12:30 [First numerical exercises & scaling analysis](./ScalingLaws/ScalingLaws.md)
 * July 5, 14:00-15:30 [Convection](./ScalingLaws/ScalingLaws.md)
 * July 5, 09:00-12:30 Practicals (Intro to LaMEM)
-* 
+
   
 
 ### Getting started
