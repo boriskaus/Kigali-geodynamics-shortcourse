@@ -790,6 +790,33 @@ Next you can open this in paraview:
 
 ![Alt text](Topo_Kigali.png)
 
-*Exercise*
+*Exercise a*
 Now retrieve a topgraphic map of East Africa around lon = [25,45] and lat=[-15,15].    
 *Important*: make sure that you use a lower resolution, otherwise the datafile becomes massively large!! Start with "@earth_relief_15m.grd".
+![Topo_EAfrica](Topo_EAfrica.png). 
+Note that to make this look like a topographic map, I used thhe "Oleron" colormap provided on [this webpage](https://www.fabiocrameri.ch/colourmaps/).
+
+*Exercise b*
+Many numerical models use cartesian coordinates; yet often the data is given in longitude/latitude. GMG provides a tool to project lon/lat to cartesian coordinates, around a specific projection point.
+For this, we first define the projection point:
+```julia
+julia> p=ProjectionPoint(;Lat=0.0,Lon=35.0)
+ProjectionPoint(0.0, 35.0, 722595.439675681, 0.0, 36, true)
+```
+Next, we can convert the data to cartesian and save it to disk with:
+```julia
+julia> Topo_cart = Convert2CartData(Topo,p)
+CartData 
+    size    : (241, 361, 1)
+    x       ϵ [ -1115.7215697630252 : 1122.6425618608757]
+    y       ϵ [ -1693.89601325424 : 1693.89601325424]
+    z       ϵ [ -4.612 : 4.6205]
+    fields  : (:Topography,)
+  attributes: ["note"]
+julia> Write_Paraview(Topo_cart, "Topo_cart_EAfrica")
+Saved file: Topo_cart_EAfrica.vts
+  ```
+This map is easier to deal with. We also get an idea of the size of the map (in kilometers).
+
+*Exercise c*
+The GeophysicalModelGenerator.jl package comes with many tutorials. Have a look at the tutorial [Generating LaMEM model](https://juliageodynamics.github.io/GeophysicalModelGenerator.jl/dev/man/LaPalma_example/) which shows how to create a 3D volcano setup.
