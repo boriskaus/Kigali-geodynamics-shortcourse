@@ -735,7 +735,8 @@ julia> scatter!(X[id4],Z[id4],color=:lightblue,markersize=3, legend=:none)
 
 
 ## 12. Using GeophysicalModelGenerator
-The package [GeophysicalModelGenerator](https://github.com/JuliaGeodynamics/GeophysicalModelGenerator.jl) is quite handy to collect data of different parts of the world, and visualize that in 3D using [Paraview](https://github.com/JuliaGeodynamics/GeophysicalModelGenerator.jl) which is an open-source 3D visualisation package. 
+The package [GeophysicalModelGenerator](https://github.com/JuliaGeodynamics/GeophysicalModelGenerator.jl) is quite handy to collect data of different parts of the world, and visualize that in 3D using [Paraview](https://github.com/JuliaGeodynamics/GeophysicalModelGenerator.jl) which is an open-source 3D visualisation package. It has a large amount of [tutorials](https://juliageodynamics.github.io/GeophysicalModelGenerator.jl/dev) to show you how this works for different cases.
+
 Let's do some exercise with this, and plot the topography of Kigali. This requires you to install both the `GMT` and `GeophysicalModelGenerator` packages:
 
 ```julia
@@ -788,3 +789,7 @@ Saved file: Topo_Kigali.vts
 Next you can open this in paraview:
 
 ![Alt text](Topo_Kigali.png)
+
+*Exercise*
+Now retrieve a topgraphic map of East Africa around lon = [25,45] and lat=[-15,15].    
+*Important*: make sure that you use a lower resolution, otherwise the datafile becomes massively large!! Start with "@earth_relief_15m.grd".
