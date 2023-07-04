@@ -11,7 +11,7 @@ To make things easier, we have prepared graphical user interfaces for this part 
 We need two packages for today:
 * [LinearFitXYerrors](https://github.com/rafael-guerra-www/LinearFitXYerrors.jl). If you installed this yesterday already, you don't have to do it again (try typing: `using LinearFitXYerrors` in the julia REPL)
 
-* [InteracctiveGeodynamics](https://github.com/JuliaGeodynamics/InteractiveGeodynamics.jl/tree/main/RayleighTaylorInstability) Please follow the installation instructions on the webpage. 
+* [InteractiveGeodynamics](https://github.com/JuliaGeodynamics/InteractiveGeodynamics.jl/tree/main/RayleighTaylorInstability) Please follow the installation instructions on the webpage. 
 
 ## 3. Rising sphere case
 
