@@ -229,10 +229,21 @@ frSoftID   	=  	0     # softening ID
 Note that you need to do this for phase 1 & 2.
 
 ### 4.7 Exercise G: 3D subduction 
-For this simulation, it is handy to have a somewhat larger computer that you can use. The input script is called `Subduction3D_DoubleSubduction_FreeSlip_Multigrid.dat`. If you run this on your laptop, you can reduce the resolution to 
-```
-nel_x = 128
-nel_y = 64
-nel_z = 32
-```
-It is a good idea to run this in parallel if you have a multiprocessor machine. If you do this on 4 cores, you will need a bit more than 4Gb of memory in your machine.
+For this simulation, it is handy to have a somewhat larger computer that you can use. The input script is called `Subduction3D_FreeSlip_Multigrid.dat`. The following simulation was done on my laptop using 4 processors and around 5Gb of RAM:
+
+![3DSubduction](Subduction3D.png)
+
+
+
+## 5. LaMEM options
+LaMEM has lots of different options and possibilities, which can take a while to get used to. Since we never received funding to make LaMEM an open-source community code, the documentation is somewhat limited (it's very time consuming to writre extensive documentation). 
+
+Yet, what we always keep up to date is the **LaMEM master input file**, which lists all options that are available.
+You will find that in the main [LaMEM repository](https://github.com/UniMainzGeo/LaMEM) in the directory `input_models/input` where there is a single file called:
+
+[lamem_input.dat](https://github.com/UniMainzGeo/LaMEM/blob/master/input_models/input/lamem_input.dat)
+
+The file itself won't work if you run it with LaMEM but it lists all possibilities and rheologies you can specify.
+
+
+
