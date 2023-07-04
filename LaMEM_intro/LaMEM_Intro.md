@@ -233,6 +233,12 @@ For this simulation, it is handy to have a somewhat larger computer that you can
 
 ![3DSubduction](Subduction3D.png)
 
+*Exercise a)*
+With the default parameters there is a viscosity contrast of 1000 between the slab and the surrounding mantle. Perform additional simulations with a viscosity ratio of 10 and 100. What is the difference in terms of dynamics of the system?
+
+*Exercise b)*
+Wouter Schellart and colleagues publised a [nature paper](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Mu_YDqMAAAAJ&citation_for_view=Mu_YDqMAAAAJ:mvPsJ3kp5DgC) in which they explored the effect of slab width on the curvature of a slab. Do simulations in which you make the slab narrower and wider.
+
 
 
 ## 5. LaMEM options
