@@ -52,7 +52,7 @@ and after a bit:
 ![RisingSphereGUI1](RisingSphere1.png)
 
 If nothing happens after a while, push the button to the right of `Run`.
-The GUI allows you to change the parameters and reports the maximum vertical velocity of the sphere. Once a calculation is finished, you can visualize it with `play`
+The GUI allows you to change the parameters and reports the maximum vertical velocity of the sphere. Once a calculation is finished, you can visualize it with `Play`.
 
 
 #### 3.2 First simulation 
@@ -62,7 +62,7 @@ Ok, all fine. What we are simulating is a 2D simulation of a rising cylinder tha
 1) Visualize other fields such as density and viscosity (`visc_creep`), by the menu that says `phase` in the picture above. Press `Play` to see it in action. 
 2) Change the arrow lengths. 
 3) Run the simulation for more timesteps, until it reaches the top of the domain. 150 timesteps will do the job. 
-4) Does the maximum vertical velocity, $v_z$ change a lot with time or is it more or less constant?
+4) Does the maximum vertical velocity, $v_z$, change a lot with time or is it more or less constant?
 5) The default set of parameters is for a higher viscous sphere in a lower viscous matrix. Try a case with a lower viscous sphere in a higher-viscous matrix. Is the velocity higher or lower, if we keep the viscosity of the matrix the same?
 
 #### 3.3 Systematic simulations
@@ -75,8 +75,7 @@ To keep things simple, we initially focus on the case where i) the viscosity of 
 
 ##### Effect of $\eta_{matrix}$
 
-I suggest that you collect these results in a separate file, which you call `scaling.jl`. We will 
-Perform 4 simulations:
+I suggest that you collect these results in a separate file, which you call `scaling.jl`. We will perform 4 simulations:
 
 ```julia
 # Effect of η matrix
@@ -99,14 +98,17 @@ julia> st = linearfitxy(log10.(ηm), log10.(Vz),  isplot=true)
 
 LinearFitXYerrors.stfitxy([16.0, 17.0, 18.0, 19.0], [0.3855993033840267, -0.6105209287121266, -1.609931928137183, -2.609712102950398], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], 16.363212718145636, -0.9985345218428321, 0.010774928747014823, 0.000614457496206779, 0.046360776586199255, 0.0026437972233691164, 0.001373968730802677, -0.999999621333157, [-0.9985345218428321], 1)
  ```
-It should also create a plot:
+This should also create a plot:
 ![Alt text](RisingSphere_Fit_etam.png)
 In this particular case:
+
 $ \log_{10}(v_z) \propto -1 \log_{10}(\eta_m) $
+
 which implies
+
 $ v_z \propto \frac{1}{\eta_m} $
 
-
+So now we need to determine the scaling laws for the other parameters
 ##### Effect of $R$
 Now do the same simulations for $R$. What is the scaling coefficient? Please take into account two effects:
 * We have a limited numerical resolution, which by default is 128 gridpoints. If the model width is 2 km, each grid cell has $2\textrm{km}/128=0.015625\textrm{km}$. You need several gridpoints to numerically resolve the sphere, so if your radius is very small you may get wrong results. 
@@ -176,7 +178,7 @@ The simulations we did above are valid for an upper-mantle scale. Yet, convectio
 
 
 ##### 4.3 Rayleigh number of convection
-For an bottom heated case, there is a nondimensional number that determines whether a system convects or not, which we call the Rayleigh-number:
+For a bottom heated case, there is a nondimensional number that determines whether a system convects or not, the Rayleigh-number:
 
 $Ra = {{\rho g \alpha \Delta T H^3}\over {\eta \kappa}}$
 
@@ -189,7 +191,7 @@ Here $\rho$ is the rock density (=3000 kgm$^{-3}$ in these simulations), $g$ the
 
 ##### 4.3 Stagnant lid vs. mobile lid convection
 
-The simulations you did above with a temperature-dependent viscosity result in a socalled stagnant lid convection, where you have convection beneath a relatively strong stagnant lid that does not move very much (the surface velocities are relatively small). This is likely representative for Mars, but not for Earth which is in a plate tectonics style of convection.
+The simulations you did above with a temperature-dependent viscosity result in a so-called stagnant lid convection, where you have convection beneath a relatively strong stagnant lid that does not move very much (the surface velocities are relatively small). This is likely representative for Mars, but not for Earth which is in a plate tectonics style of convection.
 
 We therefore need a mechanism to 'break' this stagnant lid and one simple way to do that is to introduce a so-called yield stress $\sigma_y$. This basically says that no stresses in the domain can be $>\sigma_y$. If they are larger, we will locally reduce the viscosity until stresses are close to $\sigma_y$. 
 
@@ -198,5 +200,3 @@ We therefore need a mechanism to 'break' this stagnant lid and one simple way to
 - How does the surface velocity compare to our reference case with much higher yield stress?
 - What about the the thickness of the lithosphere?
 - Vary the yield stress and determine the maximum `YieldStress` for which mobile-lid behaviour occurs.
-
-
