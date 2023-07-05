@@ -23,6 +23,20 @@ Installing LaMEM.jl is simple. Go to the julia package manager (using `]' in the
 This will take some time (some of the packages that need to be downloaded are large), but once that is done you can test that it is all working well with:
 ```julia
 pkg (1.9)> test LaMEM
+
+...
+=========================== SOLUTION IS DONE! ============================
+--------------------------------------------------------------------------
+Total solution time : 2.74421 (sec) 
+--------------------------------------------------------------------------
+Test Summary: | Pass  Total     Time
+run LaMEM     |    6      6  2m04.3s
+Test Summary:     | Pass  Total  Time
+read LaMEM output |    7      7  3.3s
+No partitioning file required for 1 core model setup 
+Test Summary:                 | Pass  Total  Time
+run lamem mode save grid test |    2      2  0.5s
+     Testing LaMEM tests passed 
 ```
 
 ## 3. Getting started
@@ -36,8 +50,8 @@ The first simulation uses the input file [FallingSpheres_Multigrid.dat](https://
 First, create a working directory where you will work, say `test1` and copy the file into there.
 
 Make sure that you move to the correct directory from the julia REPL:
-
-$ cd /input_models/BuildInSetups
+```
+$ cd test1
 ```
 after which you can run the simulation with the optimized version of LaMEM as follows:
 
@@ -66,7 +80,7 @@ Running the simulation in parallel is done with:
 
 ```julia
 julia> run_lamem(ParamFile,4)
-```
+ ```
 
 ### 3.2 Visualizing results
 The LaMEM output produces VTK-files. We usually use [Paraview](https://www.paraview.org) to visualize those. Start paraview and open the file `Spheres_multigrid.pvd`.
