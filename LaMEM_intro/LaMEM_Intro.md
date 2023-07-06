@@ -2,7 +2,7 @@
 *Boris Kaus*
 
 ## 1. Introduction
-The main software we will be using is the open-source code LaMEM (Likthosphere and Mantle Evolution Model), which is a 3D parallel code to solve geodynamic processes. LaMEM is open-source and available under [https://github.com/UniMainzGeo/LaMEM](https://github.com/UniMainzGeo/LaMEM).
+The main software we will be using is the open-source code LaMEM (Lithosphere and Mantle Evolution Model), which is a 3D parallel code to solve geodynamic processes. LaMEM is open-source and available under [https://github.com/UniMainzGeo/LaMEM](https://github.com/UniMainzGeo/LaMEM).
 
 If you want to use LaMEM on a big parallel computer, you'll have to install another software package first, which is called [PETSc](https://petsc.org) (you'll find some instructions on the LaMEM webpage). Installing PETSc is not always easy, so we created another option which is a julia package called [LaMEM.jl](https://github.com/JuliaGeodynamics/LaMEM.jl) that includes precompiled versions of LaMEM and PETSc. It also has a little wrapper to run a (parallel) LaMEM simulation from julia.
 
@@ -43,7 +43,7 @@ run lamem mode save grid test |    2      2  0.5s
 
 We will first look at the sinking of a few high-density spheres in a lower density fluid, followed by some more complicated setups.
 LaMEM works with input files that have the extension `*.dat`. 
-We have added various input files for LaMEM in the [`/InputFiles`](https://github.com/boriskaus/Kigali-geodynamics-shortcourse/InputFiles/) directory of this repository. 
+We have added various input files for LaMEM in the [`/InputFiles`](https://github.com/boriskaus/Kigali-geodynamics-shortcourse/tree/main/InputFiles) directory of this repository. 
 
 ### 3.1 Running your first simulation
 The first simulation uses the input file [FallingSpheres_Multigrid.dat](https://github.com/boriskaus/Kigali-geodynamics-shortcourse/InputFiles/FallingSpheres_Multigrid.dat)
@@ -98,12 +98,12 @@ Changing the number of timesteps is done with the parameter `nstep_out`. There a
 
 1) Change the parameter in the input file, save it and rerun the simulation
 ```
-nstep_out = 19     # save output every n steps
+nstep_max = 19     
 ```
 
-2) Add the parameter `-nstep_out 19` to the command-line and run the simulation with:
+2) Add the parameter `-nstep_max 19` to the command-line and run the simulation with:
 ```julia
-julia> run_lamem(ParamFile,4,"-nstep_out 19")
+julia> run_lamem(ParamFile,4,"-nstep_max 19")
 ```
 
 In fact, most input parameters in the LaMEM input file can be set from the command-line as well.
