@@ -2,7 +2,7 @@
 *Boris Kaus*
 
 ## 1. Introduction
-The main software we will be using is the open-source code LaMEM (Likthosphere and Mantle Evolution Model), which is a 3D parallel code to solve geodynamic processes. LaMEM is open-source and available under [https://github.com/UniMainzGeo/LaMEM](https://github.com/UniMainzGeo/LaMEM).
+The main software we will be using is the open-source code LaMEM (Lithosphere and Mantle Evolution Model), which is a 3D parallel code to solve geodynamic processes. LaMEM is open-source and available under [https://github.com/UniMainzGeo/LaMEM](https://github.com/UniMainzGeo/LaMEM).
 
 If you want to use LaMEM on a big parallel computer, you'll have to install another software package first, which is called [PETSc](https://petsc.org) (you'll find some instructions on the LaMEM webpage). Installing PETSc is not always easy, so we created another option which is a julia package called [LaMEM.jl](https://github.com/JuliaGeodynamics/LaMEM.jl) that includes precompiled versions of LaMEM and PETSc. It also has a little wrapper to run a (parallel) LaMEM simulation from julia.
 
