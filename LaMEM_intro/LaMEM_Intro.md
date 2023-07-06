@@ -101,9 +101,9 @@ Changing the number of timesteps is done with the parameter `nstep_out`. There a
 nstep_max = 19     
 ```
 
-2) Add the parameter `-nstep_out 19` to the command-line and run the simulation with:
+2) Add the parameter `-nstep_max 19` to the command-line and run the simulation with:
 ```julia
-julia> run_lamem(ParamFile,4,"-nstep_out 19")
+julia> run_lamem(ParamFile,4,"-nstep_max 19")
 ```
 
 In fact, most input parameters in the LaMEM input file can be set from the command-line as well.
