@@ -98,7 +98,7 @@ Changing the number of timesteps is done with the parameter `nstep_out`. There a
 
 1) Change the parameter in the input file, save it and rerun the simulation
 ```
-nstep_out = 19     # save output every n steps
+nstep_max = 19     
 ```
 
 2) Add the parameter `-nstep_out 19` to the command-line and run the simulation with:
