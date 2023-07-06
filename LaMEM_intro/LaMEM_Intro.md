@@ -43,7 +43,7 @@ run lamem mode save grid test |    2      2  0.5s
 
 We will first look at the sinking of a few high-density spheres in a lower density fluid, followed by some more complicated setups.
 LaMEM works with input files that have the extension `*.dat`. 
-We have added various input files for LaMEM in the [`/InputFiles`](https://github.com/boriskaus/Kigali-geodynamics-shortcourse/InputFiles/) directory of this repository. 
+We have added various input files for LaMEM in the [`/InputFiles`](https://github.com/boriskaus/Kigali-geodynamics-shortcourse/tree/main/InputFiles) directory of this repository. 
 
 ### 3.1 Running your first simulation
 The first simulation uses the input file [FallingSpheres_Multigrid.dat](https://github.com/boriskaus/Kigali-geodynamics-shortcourse/InputFiles/FallingSpheres_Multigrid.dat)
