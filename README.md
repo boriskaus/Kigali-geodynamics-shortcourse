@@ -1,5 +1,5 @@
 # ICTP-EAIFR-IUGG Workshop on Computational Geodynamics.
-Lecture notes of part of the joint ICTP-EAIFR-IUGG Workshop on Computational Geodynamics. 
+Lecture notes of part of the joint [ICTP-EAIFR-IUGG Workshop on Computational Geodynamics](https://indico.ictp.it/event/10183) held on July 2-7 in Kigali, Rwanda. 
 
 * July 4, 14:00-15:30 [Intro to Julia](./JuliaIntro/IntroJulia.md)
 * July 5, 11:00-12:30 [First numerical exercises & scaling analysis](./ScalingLaws/ScalingLaws.md)
